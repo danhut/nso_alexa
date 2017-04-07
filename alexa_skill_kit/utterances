@@ -1,0 +1,20 @@
+YesIntent yes
+getvpnname VPN name is {vpn_name}
+getvpnname the VPN name is {vpn_name}
+getvpnname the VPN is called {vpn_name}
+getfirstsite the first site should be {device}
+getfirstsite the first device will be {device}
+getfirstsite the first site is {device}
+getfirstsite first device name is {device}
+getfirstsite first site is {device}
+getfirstinterface the first interface should be {interface}
+getfirstinterface the first interface is {interface}
+getfirstinterface first interface is {interface}
+getsecondsite the second site should be {device}
+getsecondsite the second device will be {device}
+getsecondsite the second site is {device}
+getsecondsite second device name is {device}
+getsecondsite second site is {device}
+getsecondinterface the second interface should be {interface}
+getsecondinterface the second interface is {interface}
+getsecondinterface second interface is {interface}

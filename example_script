@@ -1,0 +1,7 @@
+launch orchestrator
+yes
+the vpn name is Bronze
+the first site is PE 1
+first interface should be Gigabit 0
+the second device is PE 2
+second interface should be Gigabit 1

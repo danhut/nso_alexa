@@ -1,0 +1,23 @@
+---
+swagger: "2.0"
+info:
+  version: "2017-03-30T01:32:33Z"
+  title: "NSO"
+host: "43xx0etjua.execute-api.us-west-2.amazonaws.com"
+basePath: "/beta"
+schemes:
+- "https"
+paths:
+  /message:
+    post:
+      produces:
+      - "application/json"
+      responses:
+        200:
+          description: "200 response"
+          schema:
+            $ref: "#/definitions/Empty"
+definitions:
+  Empty:
+    type: "object"
+    title: "Empty Schema"

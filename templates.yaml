@@ -1,0 +1,11 @@
+welcome: Welcome to NSO.  Add a VPN?
+stop: Stopped creation
+vpn_name: Please give me the VPN name
+interface: Now give me the interface name
+list_devices: |
+    I look after these devices: {{ devices }}.
+    Which should be the {{ site }} site?
+list_interfaces: |
+    These interfaces are available on {{ device }}: {{ interfaces }}.
+    Which interface do you want?
+confirmation: Confirming you asked to create a VPN.  Enjoy the rest of your day.

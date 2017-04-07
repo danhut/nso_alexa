@@ -1,0 +1,54 @@
+{
+  "l3vpn": [{
+    "name": "{{config.name}}",
+    "endpoint": [{
+      "id": "{{config.id1}}",
+      "as-number": 65001,
+      "ce": {
+        "device": "ce0",
+        "local": {
+          "interface-name": "GigabitEthernet",
+          "interface-number": "0/9",
+          "ip-address": "192.168.0.1"
+        },
+        "link": {
+          "interface-name": "GigabitEthernet",
+          "interface-number": "0/2",
+          "ip-address": "10.1.1.1"
+        }
+      },
+      "pe": {
+        "device": "{{config.device1}}",
+        "link": {
+          "interface-name": "GigabitEthernet",
+          "interface-number": "{{config.interface1}}",
+          "ip-address": "10.1.1.2"
+        }
+      }
+    }, {
+      "id": "{{config.id2}}",
+      "as-number": 65001,
+      "ce": {
+        "device": "ce2",
+        "local": {
+          "interface-name": "GigabitEthernet",
+          "interface-number": "0/3",
+          "ip-address": "192.168.1.1"
+        },
+        "link": {
+          "interface-name": "GigabitEthernet",
+          "interface-number": "0/1",
+          "ip-address": "10.2.1.1"
+        }
+      },
+      "pe": {
+        "device": "{{config.device2}}",
+        "link": {
+          "interface-name": "GigabitEthernet",
+          "interface-number": "{{config.interface2}}",
+          "ip-address": "10.2.1.2"
+        }
+      }
+    }]
+  }]
+}

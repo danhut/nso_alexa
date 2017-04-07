@@ -1,0 +1,61 @@
+{
+  "intents": [
+    {
+      "intent": "YesIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "vpn_name",
+          "type": "VPNNames"
+        }
+      ],
+      "intent": "getvpnname"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.NoIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "device",
+          "type": "ListOfDeviceNames"
+        }
+      ],
+      "intent": "getfirstsite"
+    },
+    {
+      "slots": [
+        {
+          "name": "interface",
+          "type": "ListOfInterfaces"
+        }
+      ],
+      "intent": "getfirstinterface"
+    },
+    {
+      "slots": [
+        {
+          "name": "device",
+          "type": "ListOfDeviceNames"
+        }
+      ],
+      "intent": "getsecondsite"
+    },
+    {
+      "slots": [
+        {
+          "name": "interface",
+          "type": "ListOfInterfaces"
+        }
+      ],
+      "intent": "getsecondinterface"
+    }
+  ]
+}
