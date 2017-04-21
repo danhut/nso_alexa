@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-import logging, json, requests, yaml, boto3
-from jinja2 import Template
+import logging, json, requests, yaml
+from jinja2 import Environment, FileSystemLoader
 from flask import Flask, render_template
 from flask_ask import Ask, statement, question, session
 
@@ -16,16 +16,9 @@ app = Flask(__name__)
 ask = Ask(app, "/")
 logging.getLogger("flask_ask").setLevel(logging.DEBUG)
 
-# Get Jinja2 template from DynamoDB
-dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('nso')
-response = table.get_item(Key={'doc_id':'1'})
-item = response['Item']['template']
-template = Template(json.dumps(item))
-
-# SQS Queue Config
-messageGroupId = 'nso-group'
-queueURL= 'https://us-west-2.queue.amazonaws.com/486637738594/nsoqueue.fifo'
+env = Environment(loader = FileSystemLoader('templates'))
+env.filters['jsonify'] = json.dumps
+template = env.get_template('nso_template.json')
 
 DEVICES = ["PE1", "PE2", "PE3"]
 devices = ", ".join(DEVICES)
@@ -124,6 +117,8 @@ def send_to_apigw(nso_json):
     'content-type': "application/json",
     'cache-control': "no-cache"}
     response = requests.request("POST", url, data=nso_json, headers=headers)
+    # move print to logger
+    print(response.text)
 
 if __name__ == '__main__':
-    app.run(debug=False)
+    app.run(debug=True,)
